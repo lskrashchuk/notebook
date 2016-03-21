@@ -29,16 +29,13 @@ public class NotebookApplication {
 				case "a" :
 					inputLine = reader.readLine();
 					notebook.addNote(new Note(inputLine));
-					inputLine = reader.readLine();
 					break;
 				case "l" :
 					printAllNotes(notebook);
-					inputLine = reader.readLine();
 					break;
 				case "d" :
 					try {
 						notebook.deleteNote(Integer.parseInt(inputLine.substring(2)));
-						inputLine = reader.readLine();
 						break;
 					}
 					catch (NumberFormatException e) {
@@ -51,8 +48,7 @@ public class NotebookApplication {
 					try {
 						int indexEdit = Integer.parseInt(inputLine.substring(2));
 						inputLine = reader.readLine();
-						notebook.editNote(indexEdit,new Note(inputLine));
-						inputLine = reader.readLine();
+						notebook.editNote(indexEdit,inputLine);
 						break;
 					}
 					catch (NumberFormatException e) {
@@ -69,11 +65,9 @@ public class NotebookApplication {
 					System.out.println("e index - edit note in position index, where index - int and numbering begins with 0");
 					System.out.println("l - list all notes");
 					System.out.println("q - exit");
-					
-					inputLine = reader.readLine();
 					break;
-				
 			}
+			inputLine = reader.readLine();
 		
 		}
 

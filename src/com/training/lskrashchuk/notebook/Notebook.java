@@ -59,9 +59,9 @@ public class Notebook {
 	 * @param noteIndex
 	 * @param note
 	 */
-	public void editNote(int noteIndex, Note note){
+	public void editNote(int noteIndex, String content){
 		if ((noteIndex >= 0)&&(noteIndex < notesCount)) {
-			notes[noteIndex]=note;
+			notes[noteIndex].setContent(content);
 		}
 		else System.out.println("Index out of range");
 	}
